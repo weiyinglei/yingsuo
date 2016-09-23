@@ -1,0 +1,20 @@
+package test
+
+import (
+	"github.com/astaxie/beego"
+)
+
+//indexController
+type IndexController struct {
+	beego.Controller
+}
+
+//Get
+func (controller *IndexController) Get() {
+	controller.Ctx.WriteString("Hello Guest!")
+}
+
+func main() {
+	beego.Router("/", &IndexController{})
+	beego.Run()
+}
